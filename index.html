@@ -16397,6 +16397,162 @@ document.addEventListener(
 );
 
 </script>
+    <style>
+        /* =========================================
+   BENEFITS SECTION - FINAL FIX
+========================================= */
+
+.nxc-benefits {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+}
+
+.nxc-benefit {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 18px !important;
+    padding: 30px 25px !important;
+}
+
+.nxc-benefit-icon {
+    flex: 0 0 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+.nxc-benefit-icon svg {
+    width: 48px !important;
+    height: 48px !important;
+
+    fill: none !important;
+    stroke: #c99220 !important;
+    stroke-width: 1.5 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}
+
+.nxc-benefit > div:last-child {
+    min-width: 0 !important;
+    flex: 1 !important;
+}
+
+.nxc-benefit strong {
+    display: block !important;
+    margin-bottom: 8px !important;
+
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1px !important;
+
+    color: #111 !important;
+}
+
+.nxc-benefit span {
+    display: block !important;
+
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+
+    color: #666 !important;
+}
+
+/* Vertical separators */
+.nxc-benefit:not(:last-child) {
+    border-right: 1px solid #ddd !important;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .nxc-benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .nxc-benefit {
+        padding: 25px 20px !important;
+    }
+
+    .nxc-benefit:nth-child(2) {
+        border-right: none !important;
+    }
+
+    .nxc-benefit:nth-child(1),
+    .nxc-benefit:nth-child(2) {
+        border-bottom: 1px solid #ddd !important;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .nxc-benefits {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        margin: 0 !important;
+    }
+
+    .nxc-benefit {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        padding: 22px 20px !important;
+
+        border-right: none !important;
+        border-bottom: 1px solid #e5e5e5 !important;
+    }
+
+    .nxc-benefit:last-child {
+        border-bottom: none !important;
+    }
+
+    .nxc-benefit-icon {
+        flex: 0 0 45px !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .nxc-benefit-icon svg {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .nxc-benefit strong {
+        font-size: 10px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .nxc-benefit span {
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+    }
+}
+    </style>
 
 </body>
 </html>
