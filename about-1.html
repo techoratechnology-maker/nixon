@@ -1,0 +1,3407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Nixon Construction | Construction, Interior & Exterior Design in Kanyakumari</title>
+    <meta name="description" content="Discover Nixon Construction, a trusted construction, interior and exterior design company in Kanyakumari delivering quality residential, commercial and design-build solutions." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== CSS VARIABLES — MASTER DESIGN SYSTEM ===== */
+        :root {
+            /* Primary Gold */
+            --gold: #c38a22;
+            --gold-light: #e0b54c;
+            --gold-secondary: #b98528;
+            --gold-soft: #d6af59;
+
+            /* Dark Tones */
+            --black: #0e0f0e;
+            --charcoal: #171717;
+            --dark-ui: #111211;
+
+            /* Warm Backgrounds */
+            --cream: #f8f6ef;
+            --warm-bg: #fbfaf6;
+            --warm-bg-secondary: #f6f3eb;
+
+            /* Text */
+            --text-body: #625f59;
+            --text-secondary: #74716c;
+            --white: #ffffff;
+
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-sans: 'DM Sans', sans-serif;
+
+            /* Spacing */
+            --section-spacing: 100px;
+            --section-spacing-mobile: 60px;
+            --container-width: 1200px;
+            --container-padding: 24px;
+
+            /* Transitions */
+            --transition-smooth: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-fast: 0.3s ease;
+        }
+
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-body);
+            background-color: var(--warm-bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.96);
+            transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===== HEADER / NAVIGATION ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(180deg, rgba(14, 15, 14, 0.97) 0%, rgba(14, 15, 14, 0.92) 100%);
+            backdrop-filter: blur(4px);
+            border-bottom: 1px solid rgba(195, 138, 34, 0.15);
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .site-header.scrolled {
+            background: rgba(14, 15, 14, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+            padding: 0 var(--container-padding);
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .header-logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .header-logo-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            width: 12px;
+            height: 1.5px;
+            background: var(--gold);
+        }
+
+        .header-logo-text {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+        }
+
+        .header-logo-text span {
+            color: var(--gold);
+        }
+
+        .header-logo-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--gold);
+            opacity: 0.5;
+            margin: 0 6px;
+        }
+
+        .header-logo-sub {
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        .nav-list {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-list a {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 4px 0;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-list a:hover {
+            color: var(--white);
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        .nav-list a.active {
+            color: var(--gold-light);
+        }
+
+        .nav-list a.active::after {
+            width: 100%;
+        }
+
+        .nav-list .nav-dot {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin: 0 4px;
+            opacity: 0.4;
+        }
+
+        /* Nav CTA */
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: 8px;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-phone:hover {
+            color: var(--white);
+        }
+
+        .nav-phone svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--gold);
+        }
+
+        .btn-quote {
+            display: inline-block;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-secondary) 100%);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-quote::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-quote:hover::after {
+            left: 100%;
+        }
+
+        .btn-quote:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(195, 138, 34, 0.35);
+        }
+
+        /* Mobile Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--white);
+            transition: all var(--transition-fast);
+            border-radius: 1px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 76px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 76px);
+            background: var(--charcoal);
+            padding: 40px 24px;
+            overflow-y: auto;
+            z-index: 999;
+            border-top: 1px solid rgba(195, 138, 34, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu .nav-list {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .mobile-menu .nav-list a {
+            font-size: 16px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-menu .nav-cta {
+            flex-direction: column;
+            align-items: stretch;
+            margin: 20px 0 0 0;
+            gap: 14px;
+        }
+
+        .mobile-menu .btn-quote {
+            text-align: center;
+            padding: 14px;
+        }
+
+        .mobile-menu .nav-phone {
+            justify-content: center;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        /* ===== ABOUT HERO ===== */
+        .about-hero {
+            padding: 140px 0 80px 0;
+            background: var(--warm-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: var(--warm-bg-secondary);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero-content {
+            padding-right: 20px;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .eyebrow-line {
+            width: 40px;
+            height: 1.5px;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .about-hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.12;
+            color: var(--charcoal);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .about-hero-content h1 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .about-hero-content p {
+            font-size: 17px;
+            color: var(--text-body);
+            line-height: 1.8;
+            max-width: 540px;
+            margin-bottom: 32px;
+        }
+
+        .about-hero-content p strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            width: 100%;
+            max-width: 560px;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: var(--warm-bg-secondary);
+            border: 1px solid rgba(195, 138, 34, 0.12);
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+            display: block;
+        }
+
+        .hero-image-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-image-frame .gold-accent-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+            z-index: 2;
+        }
+
+        .hero-image-frame .gold-accent-corner {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 60px;
+            height: 60px;
+            border-top: 2px solid var(--gold);
+            border-right: 2px solid var(--gold);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero-image-frame .gold-accent-corner-bottom {
+            position: absolute;
+            bottom: 12px;
+            left: -8px;
+            width: 40px;
+            height: 40px;
+            border-bottom: 2px solid var(--gold);
+            border-left: 2px solid var(--gold);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* Blueprint decoration */
+        .hero-image-decoration {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgba(195, 138, 34, 0.08);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-image-decoration::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(195, 138, 34, 0.06);
+        }
+
+        /* ===== WHO WE ARE ===== */
+        .who-we-are {
+            padding: var(--section-spacing) 0;
+            background: var(--white);
+        }
+
+        .who-we-are-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .who-we-are-content .eyebrow {
+            margin-bottom: 16px;
+        }
+
+        .who-we-are-content h2 {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--charcoal);
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+
+        .who-we-are-content h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .who-we-are-content p {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .who-we-are-content p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .who-we-are-content p strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .who-we-are-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: var(--warm-bg-secondary);
+            border: 1px solid rgba(195, 138, 34, 0.1);
+        }
+
+        .who-we-are-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .who-we-are-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .who-we-are-image .gold-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        }
+
+        /* ===== OUR STORY ===== */
+        .our-story {
+            padding: var(--section-spacing) 0;
+            background: var(--warm-bg);
+        }
+
+        .our-story-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .our-story-header .eyebrow {
+            justify-content: center;
+        }
+
+        .our-story-header h2 {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            letter-spacing: -0.3px;
+        }
+
+        .our-story-header h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .story-timeline {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 1.5px;
+            height: calc(100% - 60px);
+            background: rgba(195, 138, 34, 0.15);
+            transform: translateX(-50%);
+        }
+
+        .story-step {
+            padding: 24px 28px;
+            background: var(--white);
+            border: 1px solid rgba(195, 138, 34, 0.06);
+            transition: all var(--transition-smooth);
+            position: relative;
+        }
+
+        .story-step:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+            border-color: rgba(195, 138, 34, 0.15);
+        }
+
+        .story-step:nth-child(odd) {
+            margin-right: 20px;
+        }
+
+        .story-step:nth-child(even) {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .story-step .step-number {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .story-step .step-number::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0.3;
+            max-width: 40px;
+        }
+
+        .story-step h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .story-step p {
+            font-size: 14px;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* ===== OUR EXPERTISE ===== */
+        .our-expertise {
+            padding: var(--section-spacing) 0;
+            background: var(--white);
+        }
+
+        .expertise-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .expertise-header .eyebrow {
+            justify-content: center;
+        }
+
+        .expertise-header h2 {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            letter-spacing: -0.3px;
+        }
+
+        .expertise-header h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .expertise-card {
+            padding: 36px 32px 32px 32px;
+            background: var(--warm-bg);
+            border: 1px solid rgba(195, 138, 34, 0.06);
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: linear-gradient(180deg, var(--gold), var(--gold-light));
+            transition: height var(--transition-smooth);
+        }
+
+        .expertise-card:hover::before {
+            height: 100%;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.05);
+            border-color: rgba(195, 138, 34, 0.1);
+        }
+
+        .expertise-card .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(195, 138, 34, 0.2);
+            color: var(--gold);
+            font-size: 18px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            margin-bottom: 18px;
+            background: rgba(195, 138, 34, 0.04);
+        }
+
+        .expertise-card .card-divider {
+            width: 30px;
+            height: 1.5px;
+            background: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .expertise-card h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .expertise-card p {
+            font-size: 14px;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        .expertise-card .gold-accent-bottom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            opacity: 0.15;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-choose {
+            padding: var(--section-spacing) 0;
+            background: var(--warm-bg-secondary);
+        }
+
+        .why-choose-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .why-choose-header .eyebrow {
+            justify-content: center;
+        }
+
+        .why-choose-header h2 {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            letter-spacing: -0.3px;
+        }
+
+        .why-choose-header h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .why-item {
+            padding: 32px 28px;
+            background: var(--white);
+            border: 1px solid rgba(195, 138, 34, 0.06);
+            transition: all var(--transition-smooth);
+            text-align: center;
+        }
+
+        .why-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+            border-color: rgba(195, 138, 34, 0.12);
+        }
+
+        .why-item .why-symbol {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--gold);
+            margin-bottom: 12px;
+            opacity: 0.6;
+            letter-spacing: 2px;
+        }
+
+        .why-item .why-divider {
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+            margin: 0 auto 14px auto;
+        }
+
+        .why-item h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--charcoal);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* ===== OUR PROCESS ===== */
+        .our-process {
+            padding: var(--section-spacing) 0;
+            background: var(--charcoal);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .our-process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c38a22' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 56px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-header .eyebrow {
+            justify-content: center;
+            color: var(--gold-soft);
+        }
+
+        .process-header .eyebrow-line {
+            background: var(--gold);
+        }
+
+        .process-header h2 {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.3px;
+        }
+
+        .process-header h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(195, 138, 34, 0.2);
+            transform: translateY(-50%);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 12px;
+            position: relative;
+            transition: all var(--transition-smooth);
+            cursor: default;
+        }
+
+        .process-step:hover {
+            transform: translateY(-4px);
+        }
+
+        .process-step .step-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px auto;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold);
+            background: rgba(195, 138, 34, 0.06);
+            position: relative;
+            z-index: 2;
+            transition: all var(--transition-smooth);
+        }
+
+        .process-step:hover .step-circle {
+            background: rgba(195, 138, 34, 0.12);
+            border-color: var(--gold-light);
+        }
+
+        .process-step .step-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        .process-step .step-label span {
+            display: block;
+            font-weight: 400;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: none;
+            margin-top: 2px;
+        }
+
+        /* ===== SEO SECTION - CONSTRUCTION ===== */
+        .seo-construction {
+            padding: var(--section-spacing) 0;
+            background: var(--white);
+        }
+
+        .seo-construction-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .seo-construction-content h2 {
+            font-family: var(--font-display);
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .seo-construction-content p {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .seo-construction-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .seo-construction-content p strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .seo-construction-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: var(--warm-bg-secondary);
+            border: 1px solid rgba(195, 138, 34, 0.08);
+        }
+
+        .seo-construction-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .seo-construction-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .seo-construction-image .gold-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        }
+
+        /* ===== INTERIOR DESIGN SEO ===== */
+        .seo-interior {
+            padding: var(--section-spacing) 0;
+            background: var(--warm-bg);
+        }
+
+        .seo-interior-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .seo-interior-grid .seo-interior-image {
+            order: 2;
+        }
+
+        .seo-interior-grid .seo-interior-content {
+            order: 1;
+        }
+
+        .seo-interior-content .eyebrow {
+            margin-bottom: 14px;
+        }
+
+        .seo-interior-content h2 {
+            font-family: var(--font-display);
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .seo-interior-content h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .seo-interior-content p {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .seo-interior-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .seo-interior-content p strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .seo-interior-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: var(--warm-bg-secondary);
+            border: 1px solid rgba(195, 138, 34, 0.08);
+        }
+
+        .seo-interior-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .seo-interior-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .seo-interior-image .gold-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        }
+
+        /* ===== EXTERIOR DESIGN SEO ===== */
+        .seo-exterior {
+            padding: var(--section-spacing) 0;
+            background: var(--white);
+        }
+
+        .seo-exterior-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .seo-exterior-content h2 {
+            font-family: var(--font-display);
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .seo-exterior-content h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .seo-exterior-content p {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .seo-exterior-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .seo-exterior-content p strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .seo-exterior-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: var(--warm-bg-secondary);
+            border: 1px solid rgba(195, 138, 34, 0.08);
+        }
+
+        .seo-exterior-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .seo-exterior-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .seo-exterior-image .gold-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        }
+
+        /* ===== LOCAL EXPERTISE ===== */
+        .local-expertise {
+            padding: var(--section-spacing) 0;
+            background: var(--warm-bg-secondary);
+            text-align: center;
+        }
+
+        .local-expertise .eyebrow {
+            justify-content: center;
+        }
+
+        .local-expertise h2 {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .local-expertise h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .local-expertise p {
+            font-size: 17px;
+            color: var(--text-body);
+            line-height: 1.8;
+            max-width: 720px;
+            margin: 0 auto 12px auto;
+        }
+
+        .local-expertise p:last-child {
+            margin-bottom: 0;
+        }
+
+        .local-expertise p strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        /* ===== OUR VALUES ===== */
+        .our-values {
+            padding: var(--section-spacing) 0;
+            background: var(--white);
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .values-header .eyebrow {
+            justify-content: center;
+        }
+
+        .values-header h2 {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            letter-spacing: -0.3px;
+        }
+
+        .values-header h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .value-item {
+            padding: 32px 28px;
+            background: var(--warm-bg);
+            border: 1px solid rgba(195, 138, 34, 0.06);
+            transition: all var(--transition-smooth);
+        }
+
+        .value-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+            border-color: rgba(195, 138, 34, 0.1);
+        }
+
+        .value-item .value-number {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .value-item .value-number::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0.2;
+            max-width: 30px;
+        }
+
+        .value-item .value-divider {
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .value-item h3 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--charcoal);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .value-item p {
+            font-size: 14px;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* ===== STATISTICS ===== */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c38a22' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item .stat-number {
+            font-family: var(--font-display);
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .stat-item .stat-label {
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .stat-item .stat-divider {
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+            margin: 10px auto 12px auto;
+            opacity: 0.4;
+        }
+
+        /* ===== IMAGE COLLAGE ===== */
+        .image-collage {
+            padding: var(--section-spacing) 0;
+            background: var(--warm-bg);
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+        }
+
+        .collage-grid .collage-main {
+            grid-row: span 2;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(195, 138, 34, 0.06);
+        }
+
+        .collage-grid .collage-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .collage-grid .collage-main:hover img {
+            transform: scale(1.04);
+        }
+
+        .collage-grid .collage-main .gold-corner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            border-top: 2px solid var(--gold);
+            border-right: 2px solid var(--gold);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .collage-grid .collage-item {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(195, 138, 34, 0.06);
+        }
+
+        .collage-grid .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .collage-grid .collage-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .collage-grid .collage-item .gold-corner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid var(--gold);
+            border-left: 2px solid var(--gold);
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        /* ===== TESTIMONIAL INTRO ===== */
+        .testimonial-intro {
+            padding: 80px 0;
+            background: var(--charcoal);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c38a22' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .testimonial-intro .eyebrow {
+            justify-content: center;
+            color: var(--gold-soft);
+        }
+
+        .testimonial-intro .eyebrow-line {
+            background: var(--gold);
+        }
+
+        .testimonial-intro h2 {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .testimonial-intro h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .testimonial-intro p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 560px;
+            margin: 0 auto 28px auto;
+            line-height: 1.8;
+        }
+
+        .testimonial-intro .btn-cta {
+            display: inline-block;
+            padding: 14px 40px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-intro .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .testimonial-intro .btn-cta:hover {
+            color: var(--white);
+        }
+
+        .testimonial-intro .btn-cta:hover::before {
+            left: 0;
+        }
+
+        .testimonial-intro .btn-cta .arrow {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform var(--transition-fast);
+        }
+
+        .testimonial-intro .btn-cta:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            padding: 100px 0;
+            background: var(--dark-ui);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c38a22' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        .final-cta .eyebrow {
+            justify-content: center;
+            color: var(--gold-soft);
+            margin-bottom: 16px;
+        }
+
+        .final-cta .eyebrow-line {
+            background: var(--gold);
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.12;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .final-cta h2 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .final-cta p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto 36px auto;
+            line-height: 1.8;
+        }
+
+        .final-cta .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .final-cta .btn-primary {
+            display: inline-block;
+            padding: 16px 44px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-secondary) 100%);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .final-cta .btn-primary:hover::after {
+            left: 100%;
+        }
+
+        .final-cta .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(195, 138, 34, 0.35);
+        }
+
+        .final-cta .btn-secondary {
+            display: inline-block;
+            padding: 16px 44px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+        }
+
+        .final-cta .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--black);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 60px 0 30px 0;
+            border-top: 1px solid rgba(195, 138, 34, 0.08);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .footer-brand .footer-logo-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 1.5px;
+        }
+
+        .footer-brand .footer-logo-text span {
+            color: var(--gold);
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 300px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-col ul li .gold-dot {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-right: 8px;
+            opacity: 0.3;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            transition: all var(--transition-fast);
+        }
+
+        .footer-social a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        /* Tablet / Small Laptop */
+        @media (max-width: 1024px) {
+            .about-hero-content h1 {
+                font-size: 44px;
+            }
+
+            .who-we-are-content h2,
+            .our-story-header h2,
+            .expertise-header h2,
+            .why-choose-header h2,
+            .process-header h2,
+            .local-expertise h2,
+            .values-header h2 {
+                font-size: 36px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .story-timeline {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .story-timeline::before {
+                display: none;
+            }
+
+            .story-step:nth-child(odd),
+            .story-step:nth-child(even) {
+                margin: 0;
+            }
+
+            .story-step {
+                padding: 20px 24px;
+            }
+
+            .seo-construction-grid,
+            .seo-interior-grid,
+            .seo-exterior-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .seo-interior-grid .seo-interior-image {
+                order: 1;
+            }
+            .seo-interior-grid .seo-interior-content {
+                order: 2;
+            }
+
+            .collage-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .collage-grid .collage-main {
+                grid-row: span 1;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 834px) {
+            .about-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-hero-content {
+                padding-right: 0;
+            }
+
+            .about-hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-image-wrapper {
+                justify-content: center;
+            }
+
+            .hero-image-frame {
+                max-width: 100%;
+            }
+
+            .who-we-are-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .who-we-are-content h2 {
+                font-size: 32px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            .final-cta h2 {
+                font-size: 36px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            .stat-item .stat-number {
+                font-size: 40px;
+            }
+
+            .testimonial-intro h2 {
+                font-size: 32px;
+            }
+
+            .local-expertise h2 {
+                font-size: 32px;
+            }
+
+            .values-header h2 {
+                font-size: 32px;
+            }
+
+            .seo-construction-content h2,
+            .seo-interior-content h2,
+            .seo-exterior-content h2 {
+                font-size: 30px;
+            }
+
+            .collage-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            :root {
+                --section-spacing: 60px;
+                --container-padding: 20px;
+            }
+
+            .header-inner {
+                height: 64px;
+            }
+
+            .nav-list {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .header-logo-text {
+                font-size: 15px;
+            }
+
+            .header-logo-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 15px;
+            }
+
+            .about-hero {
+                padding: 110px 0 50px 0;
+            }
+
+            .about-hero-content h1 {
+                font-size: 32px;
+                line-height: 1.15;
+            }
+
+            .about-hero-content p {
+                font-size: 15px;
+            }
+
+            .who-we-are-content h2 {
+                font-size: 28px;
+            }
+
+            .our-story-header h2,
+            .expertise-header h2,
+            .why-choose-header h2,
+            .process-header h2,
+            .local-expertise h2,
+            .values-header h2 {
+                font-size: 28px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .why-item {
+                padding: 24px 16px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .process-step .step-circle {
+                width: 44px;
+                height: 44px;
+                font-size: 14px;
+            }
+
+            .process-step .step-label {
+                font-size: 10px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .stat-item .stat-number {
+                font-size: 34px;
+            }
+
+            .stat-item .stat-label {
+                font-size: 11px;
+            }
+
+            .final-cta {
+                padding: 60px 0;
+            }
+
+            .final-cta h2 {
+                font-size: 30px;
+            }
+
+            .final-cta p {
+                font-size: 15px;
+            }
+
+            .final-cta .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .final-cta .btn-primary,
+            .final-cta .btn-secondary {
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
+                padding: 14px 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .testimonial-intro h2 {
+                font-size: 28px;
+            }
+
+            .testimonial-intro p {
+                font-size: 15px;
+            }
+
+            .local-expertise h2 {
+                font-size: 28px;
+            }
+            .local-expertise p {
+                font-size: 15px;
+            }
+
+            .seo-construction-content h2,
+            .seo-interior-content h2,
+            .seo-exterior-content h2 {
+                font-size: 26px;
+            }
+
+            .collage-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .collage-grid .collage-main {
+                aspect-ratio: 4/3;
+            }
+
+            .collage-grid .collage-item {
+                aspect-ratio: 4/3;
+            }
+
+            .values-header h2 {
+                font-size: 28px;
+            }
+
+            .our-story-header h2 {
+                font-size: 28px;
+            }
+
+            .expertise-header h2 {
+                font-size: 28px;
+            }
+
+            .why-choose-header h2 {
+                font-size: 28px;
+            }
+
+            .process-header h2 {
+                font-size: 28px;
+            }
+
+            .eyebrow {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .eyebrow-line {
+                width: 30px;
+            }
+
+            .hero-image-frame .gold-accent-corner,
+            .hero-image-frame .gold-accent-corner-bottom {
+                display: none;
+            }
+
+            .hero-image-decoration {
+                display: none;
+            }
+
+            .story-step {
+                padding: 16px 20px;
+            }
+
+            .story-step h3 {
+                font-size: 16px;
+            }
+
+            .expertise-card {
+                padding: 24px 20px;
+            }
+
+            .value-item {
+                padding: 24px 20px;
+            }
+
+            .about-hero-grid {
+                gap: 30px;
+            }
+
+            .who-we-are-grid {
+                gap: 30px;
+            }
+
+            .seo-construction-grid,
+            .seo-interior-grid,
+            .seo-exterior-grid {
+                gap: 30px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --container-padding: 16px;
+            }
+
+            .header-inner {
+                height: 58px;
+            }
+
+            .header-logo-text {
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+
+            .header-logo-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 13px;
+            }
+
+            .header-logo-divider {
+                height: 18px;
+                margin: 0 4px;
+            }
+
+            .header-logo-sub {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .mobile-menu {
+                top: 58px;
+                height: calc(100vh - 58px);
+                padding: 28px 16px;
+            }
+
+            .about-hero {
+                padding: 90px 0 40px 0;
+            }
+
+            .about-hero-content h1 {
+                font-size: 26px;
+            }
+
+            .about-hero-content p {
+                font-size: 14px;
+            }
+
+            .who-we-are-content h2 {
+                font-size: 24px;
+            }
+
+            .our-story-header h2,
+            .expertise-header h2,
+            .why-choose-header h2,
+            .process-header h2,
+            .local-expertise h2,
+            .values-header h2 {
+                font-size: 24px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .process-step .step-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 12px;
+            }
+
+            .process-step .step-label {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .process-step .step-label span {
+                font-size: 8px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .stat-item .stat-number {
+                font-size: 28px;
+            }
+
+            .stat-item .stat-label {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+            .final-cta h2 {
+                font-size: 26px;
+            }
+
+            .final-cta p {
+                font-size: 14px;
+            }
+
+            .testimonial-intro h2 {
+                font-size: 24px;
+            }
+
+            .local-expertise h2 {
+                font-size: 24px;
+            }
+            .local-expertise p {
+                font-size: 14px;
+            }
+
+            .seo-construction-content h2,
+            .seo-interior-content h2,
+            .seo-exterior-content h2 {
+                font-size: 22px;
+            }
+
+            .seo-construction-content p,
+            .seo-interior-content p,
+            .seo-exterior-content p {
+                font-size: 14px;
+            }
+
+            .collage-grid {
+                gap: 10px;
+            }
+
+            .values-header h2 {
+                font-size: 24px;
+            }
+
+            .our-story-header h2 {
+                font-size: 24px;
+            }
+
+            .expertise-header h2 {
+                font-size: 24px;
+            }
+
+            .why-choose-header h2 {
+                font-size: 24px;
+            }
+
+            .process-header h2 {
+                font-size: 24px;
+            }
+
+            .eyebrow {
+                font-size: 9px;
+                letter-spacing: 1.5px;
+                gap: 10px;
+            }
+
+            .eyebrow-line {
+                width: 24px;
+            }
+
+            .story-step {
+                padding: 14px 16px;
+            }
+
+            .story-step h3 {
+                font-size: 15px;
+            }
+
+            .story-step p {
+                font-size: 13px;
+            }
+
+            .expertise-card h3 {
+                font-size: 16px;
+            }
+
+            .expertise-card p {
+                font-size: 13px;
+            }
+
+            .why-item h3 {
+                font-size: 14px;
+            }
+            .why-item p {
+                font-size: 13px;
+            }
+
+            .value-item h3 {
+                font-size: 15px;
+            }
+            .value-item p {
+                font-size: 13px;
+            }
+
+            .btn-quote {
+                padding: 8px 16px;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+            .nav-phone {
+                font-size: 11px;
+            }
+
+            .site-footer {
+                padding: 40px 0 20px 0;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .about-hero-content h1 {
+                font-size: 22px;
+            }
+
+            .who-we-are-content h2 {
+                font-size: 20px;
+            }
+
+            .our-story-header h2,
+            .expertise-header h2,
+            .why-choose-header h2,
+            .process-header h2,
+            .local-expertise h2,
+            .values-header h2 {
+                font-size: 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 22px;
+            }
+
+            .testimonial-intro h2 {
+                font-size: 20px;
+            }
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .reveal,
+            .reveal-left,
+            .reveal-right,
+            .reveal-scale {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader" role="banner">
+        <div class="header-inner">
+            <a href="/" class="header-logo" aria-label="Nixon Construction Home">
+                <span class="header-logo-icon">NC</span>
+                <span class="header-logo-text">NIXON <span>CONSTRUCTION</span></span>
+                <span class="header-logo-divider"></span>
+                <span class="header-logo-sub">Est. 2010</span>
+            </a>
+
+            <nav class="nav-list" role="navigation" aria-label="Main Navigation">
+                <a href="/">Home</a>
+                <span class="nav-dot"></span>
+                <a href="/about-us" class="active">About</a>
+                <span class="nav-dot"></span>
+                <a href="/services">Services</a>
+                <span class="nav-dot"></span>
+                <a href="/projects">Projects</a>
+                <span class="nav-dot"></span>
+                <a href="/contact">Contact</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="tel:+919999999999" class="nav-phone" aria-label="Call Nixon Construction">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span>+91 99999 99999</span>
+                </a>
+                <a href="/contact" class="btn-quote">Get a Quote</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile Navigation">
+            <div class="nav-list">
+                <a href="/">Home</a>
+                <a href="/about-us" class="active">About</a>
+                <a href="/services">Services</a>
+                <a href="/projects">Projects</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="tel:+919999999999" class="nav-phone">
+                    <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:var(--gold);"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    +91 99999 99999
+                </a>
+                <a href="/contact" class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ABOUT HERO ===== -->
+    <section class="about-hero" aria-labelledby="aboutHeroTitle">
+        <div class="container">
+            <div class="about-hero-grid">
+                <div class="about-hero-content reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        ABOUT NIXON CONSTRUCTION
+                    </div>
+                    <h1 id="aboutHeroTitle">
+                        Building More Than Structures.<br />
+                        Creating Places That Feel Like <em>Home.</em>
+                    </h1>
+                    <p>
+                        Nixon Construction is a professional construction, interior design and exterior design company serving Kanyakumari and surrounding areas. We combine thoughtful planning, skilled craftsmanship and contemporary design to create residential and commercial spaces that are built for lasting value. Recognised by clients looking for a trusted and quality-focused <strong>construction company in Kanyakumari</strong>, we are committed to delivering thoughtfully planned and professionally executed spaces.
+                    </p>
+                </div>
+                <div class="hero-image-wrapper reveal-right">
+                    <div class="hero-image-frame">
+                        <img
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                        alt="Luxury modern residential architecture in Kanyakumari"
+                        loading="lazy"
+                        />
+                        <div class="gold-accent-strip"></div>
+                        <div class="gold-accent-corner"></div>
+                        <div class="gold-accent-corner-bottom"></div>
+                        <div class="hero-image-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHO WE ARE ===== -->
+    <section class="who-we-are" aria-labelledby="whoWeAreTitle">
+        <div class="container">
+            <div class="who-we-are-grid">
+                <div class="who-we-are-content reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        WHO WE ARE
+                    </div>
+                    <h2 id="whoWeAreTitle">
+                        We Don't Just Build.<br />
+                        We Create <em>Landmarks.</em>
+                    </h2>
+                    <p>
+                        Nixon Construction is a design-led construction company built on a foundation of quality workmanship, attention to detail and a deep understanding of Kanyakumari's architectural landscape. From residential projects to commercial developments, we offer a complete design and build service that brings clarity, precision and long-term value to every project.
+                    </p>
+                    <p>
+                        Whether it's a new home, a villa, a commercial space or a complete interior transformation, we approach each project with the same commitment: to create spaces that are functional, beautiful and built to last. As a trusted <strong>home construction company in Kanyakumari</strong>, we combine local knowledge with contemporary design thinking to deliver results that exceed expectations.
+                    </p>
+                </div>
+                <div class="who-we-are-image reveal-scale">
+                    <img
+                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80"
+                    alt="Nixon Construction team working on a residential project"
+                    loading="lazy"
+                    />
+                    <div class="gold-strip"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR STORY ===== -->
+    <section class="our-story" aria-labelledby="ourStoryTitle">
+        <div class="container">
+            <div class="our-story-header reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    OUR STORY
+                </div>
+                <h2 id="ourStoryTitle">
+                    Built on Trust.<br />
+                    Driven by <em>Craftsmanship.</em>
+                </h2>
+            </div>
+            <div class="story-timeline">
+                <div class="story-step reveal">
+                    <div class="step-number">01</div>
+                    <h3>Understanding the Client</h3>
+                    <p>We begin every project by listening carefully to our clients — understanding their vision, lifestyle, budget and functional needs. This foundation guides everything that follows.</p>
+                </div>
+                <div class="story-step reveal" style="transition-delay:0.1s;">
+                    <div class="step-number">02</div>
+                    <h3>Planning &amp; Design</h3>
+                    <p>Our team translates client aspirations into clear architectural plans, interior layouts and exterior concepts. We refine every detail to ensure the design is both practical and inspiring.</p>
+                </div>
+                <div class="story-step reveal" style="transition-delay:0.2s;">
+                    <div class="step-number">03</div>
+                    <h3>Quality Execution</h3>
+                    <p>On-site, we bring the design to life with precision, using high-quality materials and skilled workmanship. We manage every trade and coordinate all elements to maintain schedule and standards.</p>
+                </div>
+                <div class="story-step reveal" style="transition-delay:0.3s;">
+                    <div class="step-number">04</div>
+                    <h3>Finishing &amp; Delivery</h3>
+                    <p>We complete each project with a meticulous finishing process, ensuring every surface, fixture and detail meets our high standards. The result is a space that feels complete and cared for.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR EXPERTISE ===== -->
+    <section class="our-expertise" aria-labelledby="expertiseTitle">
+        <div class="container">
+            <div class="expertise-header reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    OUR EXPERTISE
+                </div>
+                <h2 id="expertiseTitle">
+                    Complete Construction &amp; Design.<br />
+                    One <em>Vision.</em>
+                </h2>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card reveal" style="transition-delay:0s;">
+                    <div class="card-icon">R</div>
+                    <div class="card-divider"></div>
+                    <h3>Residential Construction</h3>
+                    <p>Custom homes designed and constructed with attention to structure, functionality and finish. From villas to independent houses, we build homes that stand the test of time.</p>
+                    <div class="gold-accent-bottom"></div>
+                </div>
+                <div class="expertise-card reveal" style="transition-delay:0.08s;">
+                    <div class="card-icon">C</div>
+                    <div class="card-divider"></div>
+                    <h3>Commercial Construction</h3>
+                    <p>Professional commercial spaces planned around durability, usability and modern architectural requirements. Offices, retail outlets and institutional buildings built to perform.</p>
+                    <div class="gold-accent-bottom"></div>
+                </div>
+                <div class="expertise-card reveal" style="transition-delay:0.16s;">
+                    <div class="card-icon">I</div>
+                    <div class="card-divider"></div>
+                    <h3>Interior Design</h3>
+                    <p>Thoughtfully designed interiors balancing aesthetics, comfort and functionality. As one of the <strong>best interior designers in Kanyakumari</strong>, we create spaces that feel curated and complete.</p>
+                    <div class="gold-accent-bottom"></div>
+                </div>
+                <div class="expertise-card reveal" style="transition-delay:0.24s;">
+                    <div class="card-icon">E</div>
+                    <div class="card-divider"></div>
+                    <h3>Exterior Design</h3>
+                    <p>Architectural exteriors, facades, landscaping integration and visual identity for buildings. We are recognised as a leading <strong>exterior design company in Kanyakumari</strong>.</p>
+                    <div class="gold-accent-bottom"></div>
+                </div>
+                <div class="expertise-card reveal" style="transition-delay:0.32s;">
+                    <div class="card-icon">D</div>
+                    <div class="card-divider"></div>
+                    <h3>Design &amp; Build</h3>
+                    <p>A streamlined process combining design, planning and construction under one coordinated team. This integrated approach reduces complexity and ensures consistency from concept to completion.</p>
+                    <div class="gold-accent-bottom"></div>
+                </div>
+                <div class="expertise-card reveal" style="transition-delay:0.4s;">
+                    <div class="card-icon">R</div>
+                    <div class="card-divider"></div>
+                    <h3>Renovation &amp; Restoration</h3>
+                    <p>Modern upgrades, renovations and restoration solutions that respect the existing structure while improving functionality. We bring new life to older properties with care and precision.</p>
+                    <div class="gold-accent-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-choose" aria-labelledby="whyTitle">
+        <div class="container">
+            <div class="why-choose-header reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    WHY NIXON CONSTRUCTION
+                </div>
+                <h2 id="whyTitle">
+                    Precision in Every Detail.<br />
+                    Purpose in Every <em>Space.</em>
+                </h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item reveal" style="transition-delay:0s;">
+                    <div class="why-symbol">⏤</div>
+                    <div class="why-divider"></div>
+                    <h3>Quality</h3>
+                    <p>High-quality materials, careful execution and professional construction practices that ensure every project is built to last.</p>
+                </div>
+                <div class="why-item reveal" style="transition-delay:0.08s;">
+                    <div class="why-symbol">⏤</div>
+                    <div class="why-divider"></div>
+                    <h3>Craftsmanship</h3>
+                    <p>Experienced workmanship with attention to architectural details and finishing, delivered by a skilled team that takes pride in every build.</p>
+                </div>
+                <div class="why-item reveal" style="transition-delay:0.16s;">
+                    <div class="why-symbol">⏤</div>
+                    <div class="why-divider"></div>
+                    <h3>Transparency</h3>
+                    <p>Clear communication, practical planning and an organised project process that keeps clients informed and confident throughout the journey.</p>
+                </div>
+                <div class="why-item reveal" style="transition-delay:0.24s;">
+                    <div class="why-symbol">⏤</div>
+                    <div class="why-divider"></div>
+                    <h3>Design</h3>
+                    <p>Contemporary architectural, interior and exterior solutions tailored to each project, with a focus on functionality, aesthetics and long-term value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR PROCESS ===== -->
+    <section class="our-process" aria-labelledby="processTitle">
+        <div class="container">
+            <div class="process-header reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    OUR PROCESS
+                </div>
+                <h2 id="processTitle">
+                    From First Idea to Final <em>Detail.</em>
+                </h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal" style="transition-delay:0s;">
+                    <div class="step-circle">01</div>
+                    <div class="step-label">CONSULTATION <span>Understanding your vision</span></div>
+                </div>
+                <div class="process-step reveal" style="transition-delay:0.08s;">
+                    <div class="step-circle">02</div>
+                    <div class="step-label">PLANNING <span>Site assessment &amp; feasibility</span></div>
+                </div>
+                <div class="process-step reveal" style="transition-delay:0.16s;">
+                    <div class="step-circle">03</div>
+                    <div class="step-label">DESIGN <span>Architectural &amp; interior concepts</span></div>
+                </div>
+                <div class="process-step reveal" style="transition-delay:0.24s;">
+                    <div class="step-circle">04</div>
+                    <div class="step-label">CONSTRUCTION <span>Execution with precision</span></div>
+                </div>
+                <div class="process-step reveal" style="transition-delay:0.32s;">
+                    <div class="step-circle">05</div>
+                    <div class="step-label">HANDOVER <span>Quality inspection &amp; delivery</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEO: CONSTRUCTION EXPERTISE ===== -->
+    <section class="seo-construction" aria-labelledby="seoConstTitle">
+        <div class="container">
+            <div class="seo-construction-grid">
+                <div class="seo-construction-content reveal">
+                    <h2 id="seoConstTitle">A Trusted Construction Company in Kanyakumari</h2>
+                    <p>
+                        As a leading <strong>construction company in Kanyakumari</strong>, Nixon Construction brings together architectural expertise, interior design capability and construction execution under one roof. We specialise in new home construction, villa projects, commercial developments and complete design-and-build solutions that reflect the highest standards of quality and professionalism.
+                    </p>
+                    <p>
+                        Our approach to <strong>residential construction in Kanyakumari</strong> is rooted in understanding how families live, work and grow. We design homes that are not only structurally sound but also thoughtfully planned for everyday life. From site selection and planning to finishing and handover, we manage every phase with care and accountability.
+                    </p>
+                    <p>
+                        For commercial clients, we offer <strong>commercial construction in Kanyakumari</strong> services that prioritise durability, functionality and a strong visual identity. Whether it's an office, retail space or institution, we build environments that support business success.
+                    </p>
+                </div>
+                <div class="seo-construction-image reveal-scale">
+                    <img
+                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                    alt="Modern residential construction in Kanyakumari"
+                    loading="lazy"
+                    />
+                    <div class="gold-strip"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEO: INTERIOR DESIGN ===== -->
+    <section class="seo-interior" aria-labelledby="seoInteriorTitle">
+        <div class="container">
+            <div class="seo-interior-grid">
+                <div class="seo-interior-content reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        INTERIOR DESIGN
+                    </div>
+                    <h2 id="seoInteriorTitle">
+                        Interiors Designed Around the Way You <em>Live.</em>
+                    </h2>
+                    <p>
+                        At Nixon Construction, we believe that great interiors are more than just decoration — they are the backdrop to daily life. As one of the <strong>best interior designers in Kanyakumari</strong>, we create living room interiors, bedroom spaces, modular kitchens and lighting schemes that are both beautiful and functional.
+                    </p>
+                    <p>
+                        Our <strong>interior design company in Kanyakumari</strong> works closely with clients to understand their lifestyle, preferences and spatial needs. We select materials, colours and furniture that align with the architecture and create a cohesive, comfortable environment. From contemporary minimalism to luxury finishes, we design interiors that feel personal and purposeful.
+                    </p>
+                </div>
+                <div class="seo-interior-image reveal-scale">
+                    <img
+                    src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80"
+                    alt="Contemporary interior design by Nixon Construction"
+                    loading="lazy"
+                    />
+                    <div class="gold-strip"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEO: EXTERIOR DESIGN ===== -->
+    <section class="seo-exterior" aria-labelledby="seoExteriorTitle">
+        <div class="container">
+            <div class="seo-exterior-grid">
+                <div class="seo-exterior-content reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        EXTERIOR DESIGN
+                    </div>
+                    <h2 id="seoExteriorTitle">
+                        Architecture That Makes a Lasting <em>First Impression.</em>
+                    </h2>
+                    <p>
+                        The exterior of a building is its identity. Nixon Construction's <strong>exterior design company in Kanyakumari</strong> team specialises in front elevation design, facade composition, exterior colour schemes and landscape integration. We create buildings that are visually striking, contextually appropriate and built to withstand the local climate.
+                    </p>
+                    <p>
+                        As <strong>exterior designers in Kanyakumari</strong>, we consider every element — from the main facade to boundary design, lighting and gateways — to ensure a cohesive and welcoming appearance. Our work reflects a deep understanding of materials, proportions and the relationship between a building and its surroundings.
+                    </p>
+                </div>
+                <div class="seo-exterior-image reveal-scale">
+                    <img
+                    src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80"
+                    alt="Luxury exterior design and facade by Nixon Construction"
+                    loading="lazy"
+                    />
+                    <div class="gold-strip"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCAL EXPERTISE ===== -->
+    <section class="local-expertise" aria-labelledby="localTitle">
+        <div class="container">
+            <div class="reveal">
+                <div class="eyebrow" style="justify-content:center;">
+                    <span class="eyebrow-line"></span>
+                    LOCAL EXPERTISE
+                </div>
+                <h2 id="localTitle">
+                    Designed for Kanyakumari.<br />
+                    Built for <em>Tomorrow.</em>
+                </h2>
+                <p>
+                    Nixon Construction brings a deep understanding of Kanyakumari's architectural preferences, residential requirements, climate considerations and material choices. We design and build homes that respond to the local context — embracing contemporary construction expectations while respecting regional sensibilities.
+                </p>
+                <p>
+                    Our projects are planned with a focus on functionality, durability and aesthetic harmony, ensuring that every space we create is not only beautiful today but remains relevant and valuable for years to come. We are proud to be a <strong>best construction company in Kanyakumari</strong> that clients trust to deliver excellence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR VALUES ===== -->
+    <section class="our-values" aria-labelledby="valuesTitle">
+        <div class="container">
+            <div class="values-header reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    OUR VALUES
+                </div>
+                <h2 id="valuesTitle">
+                    The Principles Behind Every <em>Project.</em>
+                </h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-item reveal" style="transition-delay:0s;">
+                    <div class="value-number">01</div>
+                    <div class="value-divider"></div>
+                    <h3>Integrity</h3>
+                    <p>We operate with honesty, transparency and accountability in every interaction with clients, partners and team members.</p>
+                </div>
+                <div class="value-item reveal" style="transition-delay:0.08s;">
+                    <div class="value-number">02</div>
+                    <div class="value-divider"></div>
+                    <h3>Quality</h3>
+                    <p>We never compromise on materials, workmanship or attention to detail. Every project reflects our commitment to excellence.</p>
+                </div>
+                <div class="value-item reveal" style="transition-delay:0.16s;">
+                    <div class="value-number">03</div>
+                    <div class="value-divider"></div>
+                    <h3>Innovation</h3>
+                    <p>We embrace contemporary design thinking, new materials and efficient construction methods to deliver better outcomes for our clients.</p>
+                </div>
+                <div class="value-item reveal" style="transition-delay:0.24s;">
+                    <div class="value-number">04</div>
+                    <div class="value-divider"></div>
+                    <h3>Commitment</h3>
+                    <p>We are committed to our clients' vision, to the communities we serve and to the long-term performance of every space we create.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATISTICS ===== -->
+    <section class="stats-section" aria-labelledby="statsTitle">
+        <div class="container">
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item reveal" style="transition-delay:0.08s;">
+                    <div class="stat-number" data-count="250">0</div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item reveal" style="transition-delay:0.16s;">
+                    <div class="stat-number" data-count="120">0</div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item reveal" style="transition-delay:0.24s;">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-label">Client Satisfaction (%)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== IMAGE COLLAGE ===== -->
+    <section class="image-collage" aria-label="Project image gallery">
+        <div class="container">
+            <div class="collage-grid">
+                <div class="collage-main reveal-scale">
+                    <img
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+                    alt="Luxury residential exterior by Nixon Construction"
+                    loading="lazy"
+                    />
+                    <div class="gold-corner"></div>
+                </div>
+                <div class="collage-item reveal-scale" style="transition-delay:0.1s;">
+                    <img
+                    src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80"
+                    alt="Modern interior design by Nixon Construction"
+                    loading="lazy"
+                    />
+                    <div class="gold-corner"></div>
+                </div>
+                <div class="collage-item reveal-scale" style="transition-delay:0.2s;">
+                    <img
+                    src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80"
+                    alt="Construction site and building process"
+                    loading="lazy"
+                    />
+                    <div class="gold-corner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL INTRO ===== -->
+    <section class="testimonial-intro" aria-labelledby="testimonialTitle">
+        <div class="container">
+            <div class="reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    CLIENT EXPERIENCE
+                </div>
+                <h2 id="testimonialTitle">
+                    Built with Care.<br />
+                    Remembered for <em>Years.</em>
+                </h2>
+                <p>
+                    Client satisfaction is at the heart of everything we do. We take pride in delivering spaces that exceed expectations and stand the test of time.
+                </p>
+                <a href="/testimonials" class="btn-cta">
+                    View Client Stories <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="final-cta" aria-labelledby="finalCtaTitle">
+        <div class="container">
+            <div class="reveal">
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    LET'S BUILD TOGETHER
+                </div>
+                <h2 id="finalCtaTitle">
+                    Your Vision.<br />
+                    Our <em>Craftsmanship.</em>
+                </h2>
+                <p>
+                    Planning a new home, commercial space, interior transformation or complete design-and-build project in Kanyakumari? Let's turn your vision into a space built to last.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn-primary">Get a Quote →</a>
+                    <a href="/contact" class="btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="footer-logo-icon">NC</span>
+                        <span class="footer-logo-text">NIXON <span>CONSTRUCTION</span></span>
+                    </div>
+                    <p>
+                        Premium construction, interior design and exterior design services in Kanyakumari. Built on trust, driven by craftsmanship.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/"><span class="gold-dot"></span>Home</a></li>
+                        <li><a href="/about-us"><span class="gold-dot"></span>About Us</a></li>
+                        <li><a href="/services"><span class="gold-dot"></span>Services</a></li>
+                        <li><a href="/projects"><span class="gold-dot"></span>Projects</a></li>
+                        <li><a href="/contact"><span class="gold-dot"></span>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services#residential"><span class="gold-dot"></span>Residential</a></li>
+                        <li><a href="/services#commercial"><span class="gold-dot"></span>Commercial</a></li>
+                        <li><a href="/services#interior"><span class="gold-dot"></span>Interior Design</a></li>
+                        <li><a href="/services#exterior"><span class="gold-dot"></span>Exterior Design</a></li>
+                        <li><a href="/services#renovation"><span class="gold-dot"></span>Renovation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+919999999999"><span class="gold-dot"></span>+91 99999 99999</a></li>
+                        <li><a href="mailto:info@nixonconstruction.in"><span class="gold-dot"></span>info@nixonconstruction.in</a></li>
+                        <li><span class="gold-dot"></span>Kanyakumari, Tamil Nadu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nixon Construction. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="YouTube">YT</a>
+                    <a href="#" aria-label="LinkedIn">IN</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ---- Header scroll ----
+            const header = document.getElementById('siteHeader');
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                if (currentScroll > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+            }, { passive: true });
+
+            // ---- Mobile hamburger ----
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            let menuOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                menuOpen = !menuOpen;
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('open');
+                hamburger.setAttribute('aria-expanded', menuOpen);
+                document.body.style.overflow = menuOpen ? 'hidden' : '';
+            });
+
+            // Close mobile menu on link click
+            mobileMenu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    menuOpen = false;
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // ---- Scroll Reveal ----
+            const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+            function checkReveals() {
+                const windowHeight = window.innerHeight;
+                const revealPoint = 100;
+
+                revealElements.forEach(function(el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < windowHeight - revealPoint) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+
+            // Initial check
+            checkReveals();
+
+            // Throttled scroll listener
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        checkReveals();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // ---- Counter Animation ----
+            const statNumbers = document.querySelectorAll('.stat-number');
+            let countersAnimated = false;
+
+            function animateCounters() {
+                if (countersAnimated) return;
+
+                const windowHeight = window.innerHeight;
+                const statsSection = document.querySelector('.stats-section');
+                if (!statsSection) return;
+
+                const rect = statsSection.getBoundingClientRect();
+                if (rect.top < windowHeight - 100) {
+                    countersAnimated = true;
+
+                    statNumbers.forEach(function(el) {
+                        const target = parseInt(el.getAttribute('data-count'), 10);
+                        if (isNaN(target)) return;
+
+                        let current = 0;
+                        const increment = Math.ceil(target / 60);
+                        const duration = 1600;
+                        const stepTime = Math.floor(duration / 60);
+
+                        const timer = setInterval(function() {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            // For percentage, add % sign
+                            if (target === 98) {
+                                el.textContent = current + '%';
+                            } else {
+                                el.textContent = current + '+';
+                            }
+                        }, stepTime);
+                    });
+                }
+            }
+
+            // Check counters on scroll
+            window.addEventListener('scroll', function() {
+                if (!countersAnimated) {
+                    animateCounters();
+                }
+            }, { passive: true });
+
+            // Also check on load after a small delay
+            setTimeout(animateCounters, 500);
+
+            // ---- Keyboard accessibility: close mobile menu on Escape ----
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && menuOpen) {
+                    menuOpen = false;
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                    hamburger.focus();
+                }
+            });
+
+            // ---- Reduced motion detection (already handled via CSS) ----
+
+            console.log('Nixon Construction — About Us page loaded.');
+        })();
+    </script>
+
+</body>
+</html>

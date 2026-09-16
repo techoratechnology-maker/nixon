@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NIXON · gravity video scroll</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden; background: #0a0908; font-family: 'Cormorant Garamond', serif; }
+    #wrap { position: relative; width: 100%; }
+    #hero-pin {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #0e0d0c;
+    }
+    .layer-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      will-change: transform, opacity;
+      opacity: 0;
+      transform: scale(1.15);
+      transition: none;
+      pointer-events: none;
+    }
+    .layer-video.active { opacity: 1; transform: scale(1); }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 10;
+      pointer-events: none;
+    }
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+      text-align: center;
+      width: 90%;
+      max-width: 900px;
+      pointer-events: none;
+      text-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    }
+    .center-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: #D4AF37;
+      letter-spacing: 0.04em;
+      font-size: clamp(2.4rem, 12vw, 5.5rem);
+      line-height: 1.1;
+      margin-bottom: 0.2rem;
+    }
+    .center-text .sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      color: #f0e6d3;
+      letter-spacing: 0.25em;
+      font-size: clamp(0.8rem, 2.5vw, 1.4rem);
+      opacity: 0.8;
+      text-transform: uppercase;
+    }
+    .side-card {
+      position: absolute;
+      left: 2.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 30;
+      color: #f0e6d3;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      background: rgba(10, 9, 8, 0.6);
+      backdrop-filter: blur(6px);
+      padding: 0.75rem 1.6rem;
+      border-left: 3px solid #D4AF37;
+      border-radius: 0 4px 4px 0;
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .side-card.show { opacity: 1; }
+    .progress-track {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 30vh;
+      background: rgba(255,255,240,0.15);
+      border-radius: 8px;
+      z-index: 30;
+      overflow: visible;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+    }
+    .progress-fill {
+      width: 100%;
+      height: 0%;
+      background: #D4AF37;
+      border-radius: 8px;
+      transition: height 0.08s linear;
+      box-shadow: 0 0 16px #D4AF37;
+    }
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 40;
+      color: #d4c9b5;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.25em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.3);
+      padding: 0.4rem 1.6rem 0.6rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .scroll-hint .arrow {
+      display: inline-block;
+      animation: bounceArrow 1.8s infinite;
+      font-size: 1.2rem;
+      line-height: 0.8;
+    }
+    @keyframes bounceArrow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+    .bottom-cards-mobile {
+      display: none;
+      position: absolute;
+      bottom: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 25;
+      width: 90%;
+      max-width: 320px;
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: none;
+    }
+    .bottom-cards-mobile .b-card {
+      background: rgba(10,9,8,0.7);
+      backdrop-filter: blur(6px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      color: #f0e6d3;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+      opacity: 0;
+      transition: opacity 0.4s;
+      white-space: nowrap;
+    }
+    .bottom-cards-mobile .b-card.show { opacity: 1; }
+    @media (max-width: 768px) {
+      .side-card { display: none; }
+      .bottom-cards-mobile { display: flex; }
+      .progress-track { right: 1rem; height: 20vh; }
+      .center-text h1 { font-size: clamp(2rem, 14vw, 3.2rem); }
+      .scroll-hint { font-size: 0.7rem; padding: 0.2rem 1.2rem 0.4rem; bottom: 1.2rem; }
+    }
+    @media (min-width: 769px) {
+      .bottom-cards-mobile { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <div id="hero-pin">
+    <!-- 9 video layers (replace src with your own video files) -->
+    <video class="layer-video" id="vid0" src="video/video-1.mp4" autoplay muted loop playsinline></video>
+    <video class="layer-video" id="vid1" src="video/video-2.mp4" autoplay muted loop playsinline></video>
+    <video class="layer-video" id="vid2" src="video/video-3.mp4" autoplay muted loop playsinline></video>
+    <video class="layer-video" id="vid3" src="video/WhatsApp Video 2026-08-26 at 11.19.32 PM.mp4" autoplay muted loop playsinline></video>
+    <video class="layer-video" id="vid4" src="video/" autoplay muted loop playsinline></video>
+    <video class="layer-video" id="vid5" src="video/WhatsApp Video 2026-08-26 at 11.20.24 PM.mp4" autoplay muted loop playsinline></video>
+    
+
+
+    <div class="overlay"></div>
+
+    <div class="center-text">
+      <h1>NIXON<br>CONSTRUCTION</h1>
+      <div class="sub">FROM BASEMENT TO BEAUTY</div>
+    </div>
+
+    <div class="side-card" id="card1">01 — EXCAVATION · JCB WORK</div>
+    <div class="side-card" id="card2">02 — STRUCTURE · CONCRETE FRAME</div>
+    <div class="side-card" id="card3">03 — CRAFTED IN CONCRETE & GLASS</div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="bottom-cards-mobile" id="mobileCards">
+      <div class="b-card" id="mcard1">01 EXCAVATION</div>
+      <div class="b-card" id="mcard2">02 STRUCTURE</div>
+      <div class="b-card" id="mcard3">03 CRAFTED</div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>SCROLL TO BUILD</span>
+      <span class="arrow">↓</span>
+    </div>
+  </div>
+  <div style="height: 60vh; pointer-events: none; background: transparent;"></div>
+</div>
+
+<script>
+  (function() {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+
+    const videos = document.querySelectorAll('.layer-video');
+    // initially show first video
+    videos[0].style.opacity = '1';
+    videos[0].style.transform = 'scale(1)';
+    // ensure all others hidden and scaled
+    videos.forEach((v, i) => {
+      if (i > 0) {
+        v.style.opacity = '0';
+        v.style.transform = 'scale(1.15)';
+      }
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#wrap',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1.2,
+        pin: '#hero-pin',
+        invalidateOnRefresh: true,
+      },
+      defaults: { ease: 'power1.inOut' }
+    });
+
+    // crossfade steps (same timing as before)
+    const steps = [
+      { start: 0.00, end: 0.18, from: 0, to: 1 },
+      { start: 0.18, end: 0.33, from: 1, to: 2 },
+      { start: 0.33, end: 0.48, from: 2, to: 3 },
+      { start: 0.48, end: 0.63, from: 3, to: 4 },
+      { start: 0.63, end: 0.75, from: 4, to: 5 },
+      { start: 0.75, end: 0.85, from: 5, to: 6 },
+      { start: 0.85, end: 0.93, from: 6, to: 7 },
+      { start: 0.93, end: 1.00, from: 7, to: 8 },
+    ];
+
+    steps.forEach(step => {
+      const fromVid = videos[step.from];
+      const toVid = videos[step.to];
+      tl.to(fromVid, {
+        opacity: 0,
+        scale: 1.15,
+        duration: (step.end - step.start) * 1.2,
+        ease: 'power1.inOut',
+      }, step.start)
+      .to(toVid, {
+        opacity: 1,
+        scale: 1,
+        duration: (step.end - step.start) * 1.2,
+        ease: 'power1.inOut',
+      }, step.start);
+    });
+    tl.set(videos[8], { opacity: 1, scale: 1 }, 0.95);
+
+    // Cards & progress
+    const card1 = document.getElementById('card1');
+    const card2 = document.getElementById('card2');
+    const card3 = document.getElementById('card3');
+    const mcard1 = document.getElementById('mcard1');
+    const mcard2 = document.getElementById('mcard2');
+    const mcard3 = document.getElementById('mcard3');
+    const progressFill = document.getElementById('progressFill');
+
+    ScrollTrigger.create({
+      trigger: '#wrap',
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        const prog = self.progress;
+        progressFill.style.height = (prog * 100) + '%';
+        const show1 = prog >= 0.10 && prog < 0.35;
+        const show2 = prog >= 0.35 && prog < 0.65;
+        const show3 = prog >= 0.65;
+        card1.classList.toggle('show', show1);
+        card2.classList.toggle('show', show2);
+        card3.classList.toggle('show', show3);
+        mcard1.classList.toggle('show', show1);
+        mcard2.classList.toggle('show', show2);
+        mcard3.classList.toggle('show', show3);
+      }
+    });
+
+    ScrollTrigger.refresh();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Autoplay videos when visible (browser may block autoplay without user gesture)
+    // but we have muted and playsinline, should work.
+    videos.forEach(v => v.play().catch(() => {}));
+  })();
+</script>
+</body>
+</html>
